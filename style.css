@@ -1,0 +1,66 @@
+@font-face {
+    font-family: proxima-nova;
+    src: url("assets/fonts/Proxima-Nova-Font.otf");
+}
+@font-face {
+    font-family: bleeding-cow;
+    src: url("assets/fonts/BleedingCowboys-Font.ttf")
+}
+@font-face {
+    font-family: cascadia;
+    src: url("assets/fonts/Cascadia.ttf")
+}
+
+body {
+    background-color: #353441;
+    font-family: bleeding-cow;
+    width: 400px;
+    height: 400px;
+}
+
+h1 {
+    color: #fff
+}
+
+.editable {
+    font-family: proxima-nova;
+    resize: none;
+    background-color: #454754;
+    color: #D1D5CA;
+    font-size: 3.75vh;
+    width: 94vw;
+    border: 0px;
+    border-radius: 2px;
+    padding: 1vw;
+    overflow-y: scroll;
+}
+
+    .editable:empty:before {
+        content: attr(placeholder);
+        opacity: 0.5
+    }
+
+    .editable::-webkit-scrollbar {
+        width: 0 !important
+    }
+
+#input {
+    height: 60px;
+    font-family: cascadia;
+    font-size: 12px;
+}
+
+#output {
+    height: 270px;
+    font-family: cascadia;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #16e16e;
+}
+
+    a:hover {
+        cursor: pointer;
+    }
