@@ -14,14 +14,15 @@ const returnSelection = () => {
 }
 
 chrome.runtime.onMessage.addListener(async (request, sender, response) => {
-    const { type } = request
+    const { type } = request;
+
     if (type === "LOAD") {
         try {
-            const selection = await returnSelection()
-            response(selection)
+            const selection = await returnSelection();
+            response(selection);
         }
         catch (e) {
-            response()
+            response();
         }
     }
-})
+});
