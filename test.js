@@ -11,4 +11,4 @@ const response = await openai.createCompletion({
     prompt: "Say this is a test",
     temperature: 9,
     max_tokens: 7,
-})
+});
