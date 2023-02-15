@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             currentWindow: true,
             active: true
         });
-        return tabs[0]
+        return tabs[0];
     }
 
     const showPopup = async (answer) => {
@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 try {
                     const detail = JSON.parse(res[0]).detail;
+
                     document.getElementById('output').style.opacity = 1;
                     document.getElementById('output').innerHTML = detail;
+
                     return;
                 }
                 catch (e) {
