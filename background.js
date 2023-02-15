@@ -3,10 +3,12 @@ const uid = () => {
 	   const value = limit * Math.random();
 	   return value | 0;
 	}
+
 	const generateX = () => {
 		const value = generateNumber(16);
 		return value.toString(16);
 	}
+
 	const generateXes = (count) => {
 		let result = '';
 		for(let i = 0; i < count; ++i) {
@@ -14,6 +16,7 @@ const uid = () => {
 		}
 		return result;
 	}
+
 	const generateconstant = () => {
 		const value = generateNumber(16);
 		const constant =  (value & 0x3) | 0x8;
@@ -25,35 +28,42 @@ const uid = () => {
   	         + '-' + generateXes(4)
   	         + '-' + '4' + generateXes(3)
   	         + '-' + generateconstant() + generateXes(3)
-  	         + '-' + generateXes(12)
+  	         + '-' + generateXes(12);
+
   	    return result;
 	};
-    return generate()
+
+    return generate();
 };
 
 const getToken = async () => {
     return new Promise(async (resolve, reject) => {
-        const resp = await fetch("https://chat.openai.com/api/auth/session")
+        const resp = await fetch("https://chat.openai.com/api/auth/session");
+
         if (resp.status === 403) {
-            reject('CLOUDFLARE')
+            reject('CLOUDFLARE');
         }
+
         try {
             const data = await resp.json()
+
             if (!data.accessToken) {
-                reject('ERROR')
+                reject('ERROR');
             }
-            resolve(data.accessToken)
+
+            resolve(data.accessToken);
         }
         catch (err) {
-            reject('ERROR')
+            reject('ERROR');
         }
-    })
+    });
 }
 
 const getResponse = async (question) => {
     return new Promise(async (resolve, reject) => {
         try {
             const accessToken = await getToken();
+
             const res = await fetch("https://chat.openai.com/backend-api/conversation", {
                 method: "POST",
                 headers: {
@@ -74,34 +84,38 @@ const getResponse = async (question) => {
                     ],
                     model: "text-davinci-002-render",
                     parent_message_id: uid()
-                })
-            })   
+                });
+            });
             resolve(res.body)
         }
         catch (e) {
             if (e === "CLOUDFLARE") {
-                reject("CLOUDFLARE")
+                reject("CLOUDFLARE");
             }
             else {
-                reject("ERROR")
+                reject("ERROR");
             }
         }
-    })
+    });
 }
 
 chrome.runtime.onConnect.addListener((port) => {
     port.onMessage.addListener((msg) => {
-        const question = msg.question
+        const question = msg.question;
+
         getResponse(question).then(async answer => {
-            const resRead = answer.getReader()
+            const resRead = answer.getReader();
+
             while (true) {
-                const {done, value} = await resRead.read()
-                if (done) break
-                if (done === undefined || value === undefined) port.postMessage('ERROR')
-                const data = new TextDecoder().decode(value)
-                port.postMessage(data)
+                const { done, value } = await resRead.read();
+
+                if (done) break;
+                if (done === undefined || value === undefined) port.postMessage('ERROR');
+
+                const data = new TextDecoder().decode(value);
+                port.postMessage(data);
             }
         })
-        .catch((e) => port.postMessage(e))
-    })
-})
+        .catch((e) => port.postMessage(e));
+    });
+});
