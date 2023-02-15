@@ -43,7 +43,8 @@ const getToken = async () => {
                 reject('ERROR')
             }
             resolve(data.accessToken)
-        } catch (err) {
+        }
+        catch (err) {
             reject('ERROR')
         }
     })
@@ -76,10 +77,12 @@ const getResponse = async (question) => {
                 })
             })   
             resolve(res.body)
-        } catch (e) {
+        }
+        catch (e) {
             if (e === "CLOUDFLARE") {
                 reject("CLOUDFLARE")
-            } else {
+            }
+            else {
                 reject("ERROR")
             }
         }
@@ -98,6 +101,7 @@ chrome.runtime.onConnect.addListener((port) => {
                 const data = new TextDecoder().decode(value)
                 port.postMessage(data)
             }
-        }).catch((e) => port.postMessage(e))
+        })
+        .catch((e) => port.postMessage(e))
     })
 })

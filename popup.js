@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                     document.getElementById('output').style.opacity = 1
                     document.getElementById('output').innerHTML = detail
                     return;
-                } catch (e) {
+                }
+                catch (e) {
                     try {
                         res = res[1].trim()
                         if (res === "[DONE]") return
@@ -28,19 +29,23 @@ document.addEventListener("DOMContentLoaded", async () => {
                         final = final.replace(/\n/g,'<br>')
                         document.getElementById('output').style.opacity = 1
                         document.getElementById('output').innerHTML = final
-                    } catch (e) {}
+                    }
+                    catch (e) {}
                 }
-            } catch (e) {
+            }
+            catch (e) {
                 document.getElementById('output').style.opacity = 1
                 document.getElementById('output').innerHTML = "Something went wrong. Please try in a few minutes."
             }
 
-        } else if (answer === "CLOUDFLARE") {
+        }
+        else if (answer === "CLOUDFLARE") {
             document.getElementById('input').style.opacity = 1
             document.getElementById('input').innerHTML = 'You need to once visit <a target="_blank" href="https://chat.openai.com/chat">chat.openai.com</a> and check if the connection is secure. Redirecting...'
             await sleep(3000)
             chrome.tabs.create({url: "https://chat.openai.com/chat"})
-        } else {
+        }
+        else {
             document.getElementById('output').style.opacity = 1
             document.getElementById('output').innerHTML = 'Something went wrong. Are you logged in to <a target="_blank" href="https://chat.openai.com/chat">chat.openai.com</a>? Try logging out and logging in again.'
         }
@@ -55,7 +60,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             const port = chrome.runtime.connect();
             port.postMessage({question: selection})
             port.onMessage.addListener((msg) => showPopup(msg))
-        } else {
+        }
+        else {
             document.getElementById('input').style.opacity = 0.5
             document.getElementById('input').innerHTML = "Awaiting input."
         }
