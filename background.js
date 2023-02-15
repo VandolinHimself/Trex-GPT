@@ -1,7 +1,7 @@
 const uid = () => {
 	const generateNumber = (limit) => {
-	   const value = limit * Math.random();
-	   return value | 0;
+        const value = limit * Math.random();
+        return value | 0;
 	}
 
 	const generateX = () => {
