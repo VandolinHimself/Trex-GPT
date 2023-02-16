@@ -4,11 +4,11 @@
 }
 @font-face {
     font-family: bleeding-cow;
-    src: url("assets/fonts/BleedingCowboys-Font.ttf")
+    src: url("assets/fonts/BleedingCowboys-Font.ttf");
 }
 @font-face {
     font-family: cascadia;
-    src: url("assets/fonts/Cascadia.ttf")
+    src: url("assets/fonts/Cascadia.ttf");
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 }
 
 h1 {
-    color: #fff
+    color: #fff;
 }
 
 .editable {
@@ -35,14 +35,14 @@ h1 {
     overflow-y: scroll;
 }
 
-    .editable:empty:before {
-        content: attr(placeholder);
-        opacity: 0.5
-    }
+.editable:empty:before {
+    content: attr(placeholder);
+    opacity: 0.5;
+}
 
-    .editable::-webkit-scrollbar {
-        width: 0 !important
-    }
+.editable::-webkit-scrollbar {
+    width: 0 !important;
+}
 
 #input {
     height: 60px;
@@ -61,6 +61,6 @@ a {
     color: #16e16e;
 }
 
-    a:hover {
-        cursor: pointer;
-    }
+a:hover {
+    cursor: pointer;
+}
