@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const sleep = ms => new Promise(r => setTimeout(r, ms));
+    const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 
     const getActiveTab = async () => {
         const tabs = await chrome.tabs.query({
