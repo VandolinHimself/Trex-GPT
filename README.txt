@@ -1,6 +1,6 @@
-# README Trex-GPT
+# Trex-GPT
 
-A template of README best practices to make your README simple to understand and easy to use. 
+A Google Chrome extension that interactions with the ChatGPT service.
 
 ## Table of Contents
 
