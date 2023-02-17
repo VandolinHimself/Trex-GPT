@@ -12,7 +12,7 @@ A Chrome and Opera extension that passes a selection of the webpage you highligh
 
 1.  Save this directory by extracting the zip file somewhere for permanent keeping.  
 
-2.  Navigate to your browsers manage extensions page to load the unpacked extension:  
+2.  Navigate to your browsers extensions page to load the unpacked extension:  
 
     - Opera: Select the extensions icon on the top right of the window (cube icon), select manage extensions, and select load unpacked.  
 
