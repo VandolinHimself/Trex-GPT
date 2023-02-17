@@ -1,6 +1,6 @@
 # Trex-GPT
 
-A Google Chrome extension that interactions with the ChatGPT service.
+A Google Chrome extension that interacts with the ChatGPT service.
 
 ## Table of Contents
 
