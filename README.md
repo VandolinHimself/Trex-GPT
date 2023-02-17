@@ -18,7 +18,7 @@ A Google Chrome extension that interacts with the ChatGPT service.
 
     - Chrome: Click the three dots to the top right of the window, mouse to more tools, and select extensions.  Make sure to activate developer mode on the top right of your extensions page, then select load unpacked.  
 
-3.  Navigate to and select the directory trex-gpt-main that you just saved or extracted.  The extension is now installed on your browser and can be pinned to your browsers extension bar for ease of access.
+3.  Navigate to and select the directory trex-gpt-main that you created in step 1.  The extension is now installed on your browser and can be pinned to your browsers extension bar for ease of access.
 
 ## Usage
 
