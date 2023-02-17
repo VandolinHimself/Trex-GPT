@@ -14,7 +14,7 @@ A Google Chrome extension that interacts with the ChatGPT service.
 
 2.  Navigate to your browsers manage extensions page to load the unpacked extension:  
 
-    - Opera: Select the extensions icon on the top right of the window (cube icon) and select manage extensions, then select load unpacked.  
+    - Opera: Select the extensions icon on the top right of the window (cube icon), select manage extensions, and select load unpacked.  
 
     - Chrome: Click the three dots to the top right of the window, mouse to more tools, and select extensions.  Make sure to activate developer mode on the top right of your extensions page, then select load unpacked.  
 
