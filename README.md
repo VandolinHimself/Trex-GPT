@@ -10,7 +10,7 @@ A Google Chrome extension that interacts with the ChatGPT service.
 
 ## Installation
 
-1.  Save this directory or extract the zip somewhere for permanent keeping.  
+1.  Save this directory by extracting the zip file somewhere for permanent keeping.  
 
 2.  Navigate to your browsers manage extensions page to load the unpacked extension:  
 
