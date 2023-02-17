@@ -1,6 +1,6 @@
 # Trex-GPT
 
-A Google Chrome extension that interacts with the ChatGPT service.
+A Chrome and Opera extension that passes a selection of the webpage you highlight to ChatGPT for ease of access, removing the need to tab between pages or use the clipboard.
 
 ## Table of Contents
 
